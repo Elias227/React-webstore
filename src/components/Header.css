@@ -1,0 +1,25 @@
+* {
+    
+}
+
+img {
+    width: 150px;
+}
+
+.header {
+    background-color: bisque;
+    display: flex;
+    align-items: center;
+    
+    z-index: 100;
+}
+
+.header_nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.header_nav li {
+    margin: 0 10px;
+}
+
