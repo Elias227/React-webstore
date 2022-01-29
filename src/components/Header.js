@@ -6,28 +6,27 @@ function Header() {
   return <header className="header">
     {/* Header logo */}
     <NavLink to="/" >
-      <img src="https://maceilautobody.com/wp-content/uploads/2018/06/logo-placeholder.png" alt="Logo" />
+      <img src="https://placeholderlogo.com/img/placeholder-logo-1.png" alt="Logo" />
     </NavLink>
     {/* nav links */}
     <nav className="header_nav">
       <ul>
         <li>
-          <NavLink to="">
-          Link1
+          <NavLink to="/">
+            Categories
           </NavLink>
         </li>
         <li>
-          <NavLink to="">
-          Link2
+          <NavLink to="/about">
+            About
           </NavLink>
         </li>
         <li>
-          <NavLink to="">
-          Link3
+          <NavLink to="/">
+            Sign In
           </NavLink>
         </li>
       </ul>
-      
     </nav>
   </header>
 }

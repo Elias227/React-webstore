@@ -10,10 +10,7 @@ function App() {
   return (
     <Router>
         <Header />
-        <div>
-          <Link to="/" >Home</Link>
-          <Link to="/about" >About</Link>
-        </div>
+        
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

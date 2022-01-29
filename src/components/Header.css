@@ -1,25 +1,29 @@
-* {
-    
-}
 
 img {
     width: 150px;
+    margin-left: 2em;
 }
 
 .header {
     background-color: bisque;
     display: flex;
     align-items: center;
-    
     z-index: 100;
+    justify-content: space-between;
 }
 
 .header_nav ul {
     display: flex;
     list-style: none;
+    float: right;
+    margin-right: 2em;
 }
 
 .header_nav li {
     margin: 0 10px;
 }
 
+.header_nav a {
+    text-decoration: none;
+    color: black;
+}
