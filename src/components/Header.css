@@ -1,29 +1,115 @@
 
-img {
-    width: 150px;
-    margin-left: 2em;
-}
-
+/* header parent */
 .header {
-    background-color: bisque;
+    background-color: #222222;
+    z-index: 100;
+    /* height: 60px; */
+}
+.header__content {
+    min-height: 65px;
     display: flex;
     align-items: center;
-    z-index: 100;
     justify-content: space-between;
+    max-width: 80em;
+    margin: 0 auto;
+    width: 80%;
 }
 
-.header_nav ul {
+/* left side content */
+.left__side {
+    display: flex;
+    align-items: center;
+}
+
+/* logo */
+.Logo {
+    margin-right: 15px;
+}
+.Logo a {
+    display: flex;
+    text-decoration: none;
+    color: white;
+    align-items: center;
+}
+.Logo h1 {
+    margin-left: 10px;
+    font-weight: normal;
+}
+
+/* navbar */
+.header__nav ul {
     display: flex;
     list-style: none;
-    float: right;
-    margin-right: 2em;
+    margin-left: 0;
+    padding-left: 0;
 }
-
-.header_nav li {
-    margin: 0 10px;
+.header__nav li {
+    /* margin: 0 10px; */
+    font-weight: 900;
+    white-space: nowrap;
 }
-
-.header_nav a {
+.header__nav a {
     text-decoration: none;
-    color: black;
+    color: #fff;
+    padding: 10px 15px;
 }
+.header__nav li:last-child a {
+    
+}
+.header__nav li:last-child a:hover  {
+}
+
+/* right side */
+.right__side {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+/* sign in */
+.sign__in a {
+    text-decoration: none;
+    color: #FF9900;
+    font-weight: 900;
+    transition: 0.2s;
+    outline: solid 5px #FF9900;
+    border-radius: 2px;
+    padding: 6px 23px;
+    margin-left: 10px;
+}
+
+.sign__in a:hover {
+    background-color: #FF9900;
+    color: #222222;
+}
+
+/* shopping cart */
+.shopping__cart {
+    margin-left: 20px;
+}
+.shopping__cart a {
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    align-items: center;
+}
+.shopping__cart .products-in-cart {
+    margin-top: -35px;
+    background-color: #FF9900;
+    color: #000;
+    font-weight: 900;
+    font-size: 13px;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    margin-left: -15px;
+}
+.shopping__cart .cart-total-price {
+    font-size: 13px;
+    font-weight: 800;
+    margin-left: -10px;
+}
+
