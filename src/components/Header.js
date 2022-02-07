@@ -21,7 +21,36 @@ function Header() {
               <li>
                 <NavLink to="/categories">
                   Categories
+                  <i className="arrow-up"></i>
                 </NavLink>
+                {/* dropdown menu */}
+                <div className="dropdown">
+                  <ul>
+                    <li>
+                      <NavLink to="/categories-tech">
+                        Tech
+                      </NavLink>
+                    </li>
+                    <hr/>
+                    <li>
+                      <NavLink to="/categories-everyday">
+                        Everyday
+                      </NavLink>
+                    </li>
+                    <hr/>
+                    <li>
+                      <NavLink to="/categories-accessories">
+                        Accessories
+                      </NavLink>
+                    </li>
+                    <hr/>
+                    <li>
+                      <NavLink to="/categories-accessories">
+                        Accessories
+                      </NavLink>
+                    </li>
+                  </ul>
+                </div>
               </li>
               <li>
                 <NavLink to="/about">
