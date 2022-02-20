@@ -1,0 +1,41 @@
+/* --- footer parent --- */
+.footer {
+  background-color: #282828;
+  width: 100%;
+}
+
+/* --- content all --- */
+.footer__content {
+  text-align: center;
+  margin: 0 auto;
+  padding: 60px;
+}
+
+/* --- social media links --- */
+.footer__socials a {
+  margin: 20px;
+}
+
+/* --- naviation links --- */
+.footer__links ul li {
+  display: inline-block;
+  white-space: nowrap;
+  margin-left: -25px;
+  padding: 30px 30px;
+  font-weight: bold;
+}
+
+.footer__links a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer__links a:hover {
+  color: rgb(138, 138, 138);
+}
+
+/* --- bottom insignia --- */
+.insignia {
+  color: rgb(146, 146, 146);
+  margin-top: 10px;
+}
+

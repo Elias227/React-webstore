@@ -26,15 +26,15 @@
     /* background-color: rgba(0, 0, 255, 0.356); */
 }
 .product {
-    /* display: flex;
-    flex-direction: column; */
+    display: flex;
+    flex-direction: column;
     /* display: block; */
     padding: 20px;
     max-height: 400px;
     min-width: 100px;
     width: 100%;
     /* align-items: center; */
-    /* justify-content: flex-end; */
+    justify-content: flex-end;
     margin: 15px;
     /* text-align: center; */
     border-radius: 5px;
@@ -46,6 +46,7 @@
 .price-and-rating {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
 }
 .product__rating {
     display: flex;
@@ -56,6 +57,7 @@
 }
 .product__image-container {
     text-align: center;
+    
 }
 .product img {
     max-height: 200px;
@@ -64,12 +66,15 @@
     -webkit-filter: drop-shadow(5px 5px 5px #666666);
     filter: drop-shadow(5px 5px 5px #666666);
     /* margin-bottom: 45px; */
+    /* position: absolute; */
+
+    /* background-color: blue; */
 }
 
-.product__button-container {
+.product > .product__button-container {
     text-align: center;
-    vertical-align: bottom;
-    align-self: flex-end;
+    /* vertical-align: bottom; */
+    /* align-self: flex-end; */
 }
 .product__button {
     background-color: #000;
@@ -79,10 +84,53 @@
     font-size: 16px;
     cursor: pointer;
     padding: 8px 18px;
-    border-radius: 5px;
+    border-radius: 7px;
     transition: 0.2s;
 }
 
 .product__button:hover {
     background-color: #FF9900;
 }
+
+/* --- Product big --- */
+
+.product__big {
+    display: grid;
+    grid-template-areas: 
+      "image image"
+      "info"
+    ;
+    /* flex-direction: column; */
+    /* display: block; */
+    padding: 20px;
+    /* max-height: 400px;
+    min-width: 100px; */
+    width: 100%;
+    /* align-items: center; */
+    /* justify-content: flex-end; */
+    margin: 15px;
+    /* text-align: center; */
+    border-radius: 5px;
+    border: 1px solid #B0B0B0;
+    align-content: center;
+}
+
+.product__big img {
+    max-height: 250px;
+    width: 120px;
+    /* object-fit: contain; */
+    -webkit-filter: drop-shadow(5px 5px 5px #666666);
+    filter: drop-shadow(5px 5px 5px #666666);
+    padding: 30px;
+
+    /* background-color: blue; */
+
+    grid-area: image;
+}
+
+.product__big > product__descripion {
+  margin-bottom: 20px;
+  grid-area: info;
+}
+
+
