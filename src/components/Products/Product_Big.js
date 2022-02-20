@@ -1,16 +1,16 @@
-import React from 'react'
-import "./Product.css";
+import React from 'react';
+import "./Product_Big.css";
 
 function Product_Big({ title, description, image, price, rating }) {
   return <div className="product__big">
-      <div className="product__image-container">
-        <img src={image} alt="product-image" />
+      <div className="product__big-image-container">
+        <img src={image} alt="product__big-image" />
       </div>
-      <div className="product__info">
-        <h2 className="product__title">{title}</h2>
-        <div className="price-and-rating">
-          <p className="product__price">{price}€</p>
-          <div className="product__rating">
+      <div className="product__big-info">
+        <h2 className="product__big-title">{title}</h2>
+        <div className="product__big-price-and-rating">
+          <p className="product__big-price">{price}€</p>
+          <div className="product__big-rating">
             {Array(rating)
               .fill()
               .map((_) => (
@@ -18,9 +18,9 @@ function Product_Big({ title, description, image, price, rating }) {
               ))}
           </div>
         </div>
-        <p className="product__description">{description}</p>
-        <div className="product__button-container">
-          <button className="product__button">Add to Cart</button>
+        <p className="product__big-description">{description}</p>
+        <div className="product__big-button-container">
+          <button className="product__big-button">Add to Cart</button>
         </div>
       </div>
     </div>;

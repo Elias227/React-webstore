@@ -9,7 +9,7 @@ function Home() {
       <p className="home__row products-list-name">Featured:</p>
     </div>
 
-    <div className="home__row product--featured">
+    <div className="home__row">
       <Product_Big
         title="Product Title"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
@@ -49,7 +49,6 @@ function Home() {
     </div>
 
     <div className="home__row">
-
       <Product
         title="Product Title"
         price={"10,00"}
