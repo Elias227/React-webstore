@@ -1,41 +1,85 @@
-/* --- Product big --- */
-
+/* --- parent container --- */
 .product__big {
-  display: grid;
-  grid-template-areas: 
-    "image image"
-    "info"
-  ;
-  /* flex-direction: column; */
-  /* display: block; */
-  padding: 20px;
-  /* max-height: 400px;
-  min-width: 100px; */
-  width: 100%;
-  /* align-items: center; */
-  /* justify-content: flex-end; */
-  margin: 15px;
-  /* text-align: center; */
   border-radius: 5px;
   border: 1px solid #B0B0B0;
   align-content: center;
+  margin: 15px;
+  padding: 60px;
+  display: flex;
+  min-height: 290px;
 }
 
-.product__big img {
-  max-height: 250px;
-  width: 120px;
-  /* object-fit: contain; */
-  -webkit-filter: drop-shadow(5px 5px 5px #666666);
-  filter: drop-shadow(5px 5px 5px #666666);
-  padding: 30px;
+/* --- product info --- */
+.product__big-info {
+  width: 110%;
+  /* background-color: blue; */
+}
 
+/* --- title --- */
+.product__big-title {
+  margin-bottom: 5px;
+}
+
+
+/* --- price and rating --- */
+.product__big-price-and-rating {
+  display: flex;
+  margin-bottom: 20px;
+}
+.product__big-price {
+  margin-top: 2px;
+}
+.product__big-rating {
+  display: flex;
+  margin-left: 50px;
+}
+.product__big-rating p {
+  font-size: 12px;
+  margin: 0px 2px;
+}
+
+/* --- product description --- */
+
+.product__big-description {
+  margin-bottom: 40px;
+}
+
+/* --- image --- */
+.product__big-image-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  /* justify-content: center; */
+}
+.product__big img {
   /* background-color: blue; */
 
-  grid-area: image;
+  -webkit-filter: drop-shadow(5px 5px 5px #666666);
+  filter: drop-shadow(5px 5px 5px #666666);
+  width: 260px;
+  /* max-height: 280px; */
+  object-fit: contain;
 }
 
 .product__big > product__big-descripion {
-margin-bottom: 20px;
-grid-area: info;
+  margin-bottom: 20px;
+  grid-area: info;
 }
+
+/* --- button --- */
+.product__big-button {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 18px;
+  border-radius: 7px;
+  transition: 0.2s;
+}
+.product__big-button:hover {
+background-color: #FF9900;
+}
+
 

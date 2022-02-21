@@ -7,7 +7,7 @@ function Product_Big({ title, description, image, price, rating }) {
         <img src={image} alt="product__big-image" />
       </div>
       <div className="product__big-info">
-        <h2 className="product__big-title">{title}</h2>
+        <h1 className="product__big-title">{title}</h1>
         <div className="product__big-price-and-rating">
           <p className="product__big-price">{price}€</p>
           <div className="product__big-rating">
