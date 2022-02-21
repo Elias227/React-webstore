@@ -1,8 +1,13 @@
 import React from 'react';
 import './Header.css';
 import { NavLink } from 'react-router-dom';
+import { useStateValue } from "../../StateProvider";
 
 function Header() {
+  const [{ cart }] = useStateValue();
+
+  console.log(cart);
+
   return <header className="header">
     <div className="header__content">
       {/* left side stuff */}
@@ -76,7 +81,7 @@ function Header() {
         <div className="shopping__cart">
           <NavLink to="cart">
             <img src="/images/icons8-shopping-cart-48.png" alt="cart"/>
-            <p className="products-in-cart">0</p>
+            <p className="products-in-cart">{cart?.length}</p>
             <p className="cart-total-price">0,00€</p>
           </NavLink>
         </div>
