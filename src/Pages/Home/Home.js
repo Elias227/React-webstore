@@ -14,7 +14,7 @@ function Home() {
         id="285620"
         title="Product Title"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        price={"10,00"}
+        price={1229}
         rating={5}
         image="/images/01_AppleiPadPro112021128Gt5G_grey.png"
       />
@@ -22,7 +22,7 @@ function Home() {
         id="873654"
         title="Product Title"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        price={"10,00"}
+        price={897}
         rating={5}
         image="/images/7a800dc93ffa6a45af04c2b49a75a4af.png"
       />
@@ -36,21 +36,21 @@ function Home() {
       <Product
         id="134786"
         title="Product Title"
-        price={"10,00"}
+        price={10.00}
         rating={5}
         image="/images/battery-bank.png"
       />
       <Product
         id="349586"
         title="Product Title"
-        price={"10,00"}
+        price={150}
         rating={5}
         image="/images/Speaker.png"
       />
       <Product
         id="923456"
         title="Product Title"
-        price={"10,00"}
+        price={444}
         rating={5}
         image="/images/Television.png"
       />
@@ -59,21 +59,21 @@ function Home() {
       <Product
         id="285643"
         title="Product Title"
-        price={"10,00"}
+        price={15.00}
         rating={5}
         image="/images/1966px-Rubik's_cube.png"
       />
       <Product
         id="982357"
         title="Product Title"
-        price={"10,00"}
+        price={1.199}
         rating={5}
         image="/images/Canon-90d-18-135mm-02-550x550.png"
       />
       <Product
         id="394873"
         title="Product Title"
-        price={"10,00"}
+        price={24.90}
         rating={5}
         image="/images/Apple-USB-C-Charge-Cable-(1m).png"
       />

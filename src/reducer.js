@@ -3,20 +3,23 @@ export const initialState = {
     {
       id: "285620",
       title: "Product Title",
-      price: "10,00",
+      price: 1229,
       rating: 5,
       image: "/images/01_AppleiPadPro112021128Gt5G_grey.png"
     },
     {
       id: "285620",
       title: "Product Title",
-      price: "10,00",
+      price: 1229,
       rating: 5,
       image: "/images/01_AppleiPadPro112021128Gt5G_grey.png"
     },
   ],
   user: null,
 };
+
+export const getCartTotal = (cart) =>
+  cart?.reduce((amount, item) => item.price + amount, 0);
 
 const reducer = (state, action) => {
   console.log(action);

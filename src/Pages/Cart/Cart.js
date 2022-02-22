@@ -2,6 +2,7 @@ import React from 'react';
 import "./Cart.css";
 import { useStateValue } from "../../StateProvider";
 import CheckoutProduct from "../../components/Products/CheckoutProduct";
+import SubTotal from "../../components/Subtotal/Subtotal";
 
 function Cart() {
   const [{ cart }] = useStateValue();
@@ -16,7 +17,7 @@ function Cart() {
           </div>
         ) : (
           <div>
-            <h3>Your Shopping Cart (3)</h3>
+            <h3>Your Shopping Cart ({cart.length})</h3>
 
             {cart?.map((item) => (
                 <CheckoutProduct 
@@ -29,13 +30,9 @@ function Cart() {
           </div>
         )}
       </div>
-      {cart.lenght > 0 && (
+      {cart.length > 0 && (
         <div className="cart__right">
-          <h1>Subtotal</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore sapiente quidem debitis minima nobis voluptatibus expedita, perspiciatis eos aperiam fuga temporibus quaerat eveniet. Sunt sint temporibus architecto veniam modi quo!
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum libero non odio doloremque sapiente nihil suscipit omnis ipsa illo dolore tempora fugiat mollitia voluptatibus odit consequuntur facilis, tempore ex harum.
-          </p>
-          {/* <SubTotal /> */}
+          <SubTotal />
         </div>
       )}
     </div>
