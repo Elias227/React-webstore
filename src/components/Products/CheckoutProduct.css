@@ -1,0 +1,17 @@
+.checkoutProduct {
+  display: flex;
+}
+
+.checkoutProduct__image {
+  object-fit: contain;
+  width: 170px;
+  height: 100%;
+}
+
+.checkoutProduct__info {
+  margin-left: 30px;
+}
+
+.checkoutProduct__info > button {
+  color: red;
+}
