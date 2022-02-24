@@ -66,7 +66,7 @@ function Home() {
       <Product
         id="982357"
         title="Product Title"
-        price={1.199}
+        price={1199}
         rating={5}
         image="/images/Canon-90d-18-135mm-02-550x550.png"
       />

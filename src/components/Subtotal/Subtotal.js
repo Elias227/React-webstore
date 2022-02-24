@@ -9,14 +9,12 @@ function Subtotal() {
 
   return (
     <div className="subtotal">
-      <h1>Subtotal</h1>
-
       <CurrencyFormat 
         renderText={(value) => (
           <>
-            <p>
-              Subtotal ({cart.length} items): <strong>{` ${value} `}</strong>
-            </p>
+            <h3 className="subtotal__text">
+              Subtotal ({cart.length} items): {`${value}`}
+            </h3>
           </>
         )}
 
@@ -27,7 +25,7 @@ function Subtotal() {
         suffix={"€"}
       />
 
-      <button>Checkout</button>
+      <button className="subtotal__button">Checkout</button>
     </div>
   )
 }

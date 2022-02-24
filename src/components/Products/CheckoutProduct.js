@@ -15,18 +15,25 @@ function CheckoutProduct({ id, title, image, price }) {
   };
 
   return (
-    <div className="checkoutProduct">
-      <img className="checkoutProduct__image" src={image} alt="" />
+    <div className="checkoutProduct__parent">
+      <div className="checkoutProduct">
+        <img className="checkoutProduct__image" src={image} alt="product" />
 
-      <div className="checkoutProduct__info">
-        <h2>{title}</h2>
+        <div className="checkoutProduct__info">
+          <div className="cp__title-and-price">
+            <h2 className="cp-title">{title}</h2>
+            <strong className="cp-price">{price}€</strong>
+          </div>
 
-        <p className="checkoutProduct__price">{price}€</p>
-
-        <button onClick={removeFromCart}>remove</button>
+          <button onClick={removeFromCart}>
+            <img src="/images/icons8-trash.svg" alt="trash" />
+          </button>
+        </div>
       </div>
+
+      <hr className="line" />
     </div>
   )
 }
 
-export default CheckoutProduct
+export default CheckoutProduct;
