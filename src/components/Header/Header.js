@@ -2,6 +2,8 @@ import React from 'react';
 import './Header.css';
 import { NavLink } from 'react-router-dom';
 import { useStateValue } from "../../StateProvider";
+import { getCartTotal } from '../../reducer';
+import CurrencyFormat from 'react-currency-format';
 
 function Header() {
   const [{ cart }] = useStateValue();
@@ -82,7 +84,20 @@ function Header() {
           <NavLink to="cart">
             <img src="/images/icons8-shopping-cart-48.png" alt="cart"/>
             <p className="products-in-cart">{cart?.length}</p>
-            <p className="cart-total-price">0,00€</p>
+            <p className="cart-total-price">
+              <CurrencyFormat 
+                renderText={(value) => (
+                  <>
+                    {`${value}`}
+                  </>
+                )}
+                decimalScale={2}
+                value={getCartTotal(cart)}
+                displayType={"text"}
+                thousandSeparator={true}
+                suffix={"€"}
+              />
+            </p>
           </NavLink>
         </div>
       </div>
