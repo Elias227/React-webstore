@@ -1,6 +1,7 @@
 .checkoutProduct__parent {
   width: 65vw;
   margin: 40px;
+  max-width: 90em;
 }
 
 .checkoutProduct {
