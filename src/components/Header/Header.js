@@ -4,9 +4,17 @@ import { NavLink } from 'react-router-dom';
 import { useStateValue } from "../../StateProvider";
 import { getCartTotal } from '../../reducer';
 import CurrencyFormat from 'react-currency-format';
+import { auth } from "../../Firebase";
+import SignIn from '../../Pages/SignIn/SignIn';
 
 function Header() {
-  const [{ cart }] = useStateValue();
+  const [{ cart, user }] = useStateValue();
+
+  const SignIn = () => {
+    if (user) {
+      auth.signOut();
+    }
+  }
 
   console.log(cart);
 
@@ -76,8 +84,11 @@ function Header() {
       {/* Right side stuff */}
       <div className="right__side">
         <div className="sign__in">
-          <NavLink to="/sign-in">
-            Sign In
+          <NavLink to={!user && "/sign-in"}>
+            <div onClick={SignIn}>
+              <h2>{user?.email}</h2>
+              <h2>{user ? 'Sign Out' : 'Sign In'}</h2>
+            </div>
           </NavLink>
         </div>
         <div className="shopping__cart">
@@ -85,7 +96,7 @@ function Header() {
             <img src="/images/icons8-shopping-cart-48.png" alt="cart"/>
             <p className="products-in-cart">{cart?.length}</p>
             <p className="cart-total-price">
-              <CurrencyFormat 
+              <CurrencyFormat
                 renderText={(value) => (
                   <>
                     {`${value}`}

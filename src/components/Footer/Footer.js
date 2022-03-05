@@ -9,10 +9,10 @@ function Footer() {
           <a href="/" target="_blank">
             <img src="/images/icons8-instagram-30.png" alt="instagram" />
           </a>
-          <a href="/" target="_blank">
+          <a href="/" target="_blank" rel="noopener noreferrer">
             <img src="/images/icons8-twitter-30.png" alt="twitter" />
           </a>
-          <a href="https://github.com/Elias227" target="_blank">
+          <a href="https://github.com/eliasnorta" target="_blank" rel="noopener noreferrer">
             <img src="/images/icons8-github-30.png" alt="github" />
           </a>
         </div>

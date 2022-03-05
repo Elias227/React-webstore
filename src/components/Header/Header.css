@@ -128,7 +128,7 @@
 }
 
 /* --- sign in --- */
-.sign__in a {
+/* .sign__in a {
     text-decoration: none;
     color: #FF9900;
     font-weight: 900;
@@ -142,7 +142,7 @@
 .sign__in a:hover {
     background-color: #FF9900;
     color: #000000;
-}
+} */
 
 /* --- shopping cart --- */
 .shopping__cart {

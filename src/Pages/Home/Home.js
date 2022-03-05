@@ -1,6 +1,6 @@
 import React from 'react';
 import Product from "../../components/Products/Product";
-import Product_Big from '../../components/Products/Product_Big';
+import ProductBig from '../../components/Products/Product_Big';
 
 function Home() {
   return <div>
@@ -10,7 +10,7 @@ function Home() {
     </div>
 
     <div className="home__row">
-      <Product_Big
+      <ProductBig
         id="285620"
         title="Product Title"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
@@ -18,7 +18,7 @@ function Home() {
         rating={5}
         image="/images/01_AppleiPadPro112021128Gt5G_grey.png"
       />
-      <Product_Big
+      <ProductBig
         id="873654"
         title="Product Title"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."

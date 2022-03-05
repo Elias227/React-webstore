@@ -20,7 +20,7 @@ function Product_Big({ id, title, description, image, price, rating }) {
 
   return <div className="product__big">
       <div className="product__big-image-container">
-        <img src={image} alt="product__big-image" />
+        <img src={image} alt="product__big" />
       </div>
       <div className="product__big-info">
         <h1 className="product__big-title">{title}</h1>

@@ -1,20 +1,5 @@
 export const initialState = {
-  cart: [
-    {
-      id: "285620",
-      title: "Product Title",
-      price: 1229,
-      rating: 5,
-      image: "/images/01_AppleiPadPro112021128Gt5G_grey.png"
-    },
-    {
-      id: "285620",
-      title: "Product Title",
-      price: 1229,
-      rating: 5,
-      image: "/images/01_AppleiPadPro112021128Gt5G_grey.png"
-    },
-  ],
+  cart: [],
   user: null,
 };
 
@@ -24,6 +9,11 @@ export const getCartTotal = (cart) =>
 const reducer = (state, action) => {
   console.log(action);
   switch(action.type) {
+    case "SET_USER": 
+      return {
+        ...state,
+        user: action.user
+      }
     case 'ADD_TO_CART':
       // adding product to cart
       return { 

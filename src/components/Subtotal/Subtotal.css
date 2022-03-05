@@ -3,11 +3,14 @@
   background-color: #F8F8F8;
   padding: 25px;
   border-radius: 10px;
+  min-width: 250px;
+  
 }
 
 /* --- text --- */
 .subtotal__text {
   margin-bottom: 28px;
+  position: absolute;
 }
 
 /* --- button --- */
@@ -22,4 +25,5 @@
   border-radius: 7px;
   transition: 0.2s;
   box-shadow: 0px 3px 10px #ffba5386;
+  margin-top: 3em;
 }
