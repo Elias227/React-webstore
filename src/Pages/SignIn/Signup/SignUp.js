@@ -1,12 +1,12 @@
-import React, { useRef, useState } from "react"
-import { useAuth } from "../../AuthContext"
-import "./SignIn.css";
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useRef, useState } from "react";
+import { useAuth } from "../../../AuthContext";
+import { Link, useNavigate } from "react-router-dom";
+import "../SignIn.css";
 
-
-function SignIn() {
+function SignUp() {
   const emailRef = useRef()
   const passwordRef = useRef()
+  const passwordConfirmRef = useRef()
   const { signup } = useAuth()
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
@@ -14,6 +14,10 @@ function SignIn() {
 
   async function handleSubmit(e) {
     e.preventDefault()
+
+    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+      return setError("Passwords do not match")
+    }
 
     try {
       setError("")
@@ -26,30 +30,29 @@ function SignIn() {
 
     setLoading(false)
   }
+
   return (
     <div className="auth__parent">
       <div className="auth__container">
-        <h2>Sign In</h2>
+        <h2>Create Your Account</h2>
         <div className="auth_error">
           {error && <p>{error}</p>}
         </div>
         <form className="auth__form" onSubmit={handleSubmit}>
-          {/* <label> */}
-            <input className="auth-input" placeholder="Your E-mail" type="email" ref={emailRef}/>
-          {/* </label> */}
+          <input className="auth-input" placeholder="Your E-mail" type="email" ref={emailRef}/>
 
           <input className="auth-input" placeholder="Password" type="password" ref={passwordRef} />
 
+          <input className="auth-input" placeholder="Confirm Password" type="password" ref={passwordConfirmRef} />
+
           <button className="auth__button" disabled={loading} type="submit">
-            Sign Up
+            Create Your Account
           </button>
         </form>
 
         <div className="auth-bottom">
-          <p>New Customer? Create an Account</p>
-          <Link className="auth__button" to="/sign-up">
-            Create Your Account
-          </Link>
+          <p>Already Have An account?</p>
+          <Link to="/sign-in">Log In</Link>
         </div>
 
       </div>
@@ -57,4 +60,4 @@ function SignIn() {
   );
 }
 
-export default SignIn
+export default SignUp

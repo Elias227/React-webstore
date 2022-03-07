@@ -10,6 +10,8 @@ import Cart from './Pages/Cart/Cart';
 import SignIn from './Pages/SignIn/SignIn';
 import { useStateValue } from "./StateProvider";
 import { auth } from './Firebase';
+import SignUp from './Pages/SignIn/Signup/SignUp';
+import { AuthProvider } from "./AuthContext"
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
@@ -42,17 +44,22 @@ function App() {
   console.log("USER IS >>> ", user);
 
   return (
-    <Router>
-        <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Cart />}/>
-        <Route path="/about" element={<About />} />
-        <Route path="/sign-in" element={<SignIn />}/>
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
-        <Footer />
-    </Router>
+    <AuthProvider>
+    
+      <Router>
+          <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<Cart />}/>
+          <Route path="/about" element={<About />} />
+          <Route path="/sign-in" element={<SignIn />}/>
+          <Route path="/sign-up" element={<SignUp />}/>
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+          <Footer />
+      </Router>
+
+    </AuthProvider>
   );
 }
 
