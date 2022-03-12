@@ -1,6 +1,6 @@
 /* --- parent --- */
 .auth__parent {
-  width: 270px;
+  width: 280px;
   background-color: #F8F8F8;
   box-shadow: 0px 3px 10px #cacaca;
   border-radius: 10px;
@@ -63,10 +63,10 @@
   margin-bottom: 17px;
 }
 
-/* --- error --- */
+/* --- message --- */
 .auth_error {
   font-size: 12px;
-  /* margin-top: -18px; */
+  margin-top: -18px;
   margin-bottom: 12px;
   color: red;
   /* position: absolute;
@@ -75,6 +75,13 @@
   width: 100%;
   left: 0; 
   right: 0; */
+}
+
+.auth_success {
+  font-size: 12px;
+  margin-top: -18px;
+  margin-bottom: 12px;
+  color: green;
 }
 
 label {

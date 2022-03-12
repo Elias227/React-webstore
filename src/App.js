@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React/*, { useEffect }*/ from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./Pages/Home/Home";
@@ -8,40 +8,40 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Cart from './Pages/Cart/Cart';
 import SignIn from './Pages/SignIn/SignIn';
-import { useStateValue } from "./StateProvider";
-import { auth } from './Firebase';
+// import { useStateValue } from "./StateProvider";
+// import { auth } from './Firebase';
 import SignUp from './Pages/SignIn/Signup/SignUp';
 import { AuthProvider } from "./AuthContext"
 
 function App() {
-  const [{ user }, dispatch] = useStateValue();
+  // const [{ user }, dispatch] = useStateValue();
 
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((authUser) => {
-      if (authUser) {
-        // user logged in
+  // useEffect(() => {
+  //   const unsubscribe = auth.onAuthStateChanged((authUser) => {
+  //     if (authUser) {
+  //       // user logged in
 
-        dispatch({
-          type: "SET_USER",
-          user: authUser,
-        })
-      } else {
-        // user logged out
+  //       dispatch({
+  //         type: "SET_USER",
+  //         user: authUser,
+  //       })
+  //     } else {
+  //       // user logged out
 
-        dispatch({
-          type: "SET_USER",
-          user: null,
-        })
-      }
-    })
+  //       dispatch({
+  //         type: "SET_USER",
+  //         user: null,
+  //       })
+  //     }
+  //   })
 
-    return () => {
-      unsubscribe();
-    }
+  //   return () => {
+  //     unsubscribe();
+  //   }
 
-  }, []);
+  // }, []);
 
-  console.log("USER IS >>> ", user);
+  // console.log("USER IS >>> ", user);
 
   return (
     <AuthProvider>

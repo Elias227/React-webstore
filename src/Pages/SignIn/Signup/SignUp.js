@@ -3,32 +3,46 @@ import { useAuth } from "../../../AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import "../SignIn.css";
 
-function SignUp() {
+export default function SignUp() {
   const emailRef = useRef()
   const passwordRef = useRef()
   const passwordConfirmRef = useRef()
   const { signup } = useAuth()
   const [error, setError] = useState("")
+  const [success, setSuccess] = useState("")
   const [loading, setLoading] = useState(false)
   const history = useNavigate()
 
   async function handleSubmit(e) {
     e.preventDefault()
 
+    console.log("test1")
+
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       return setError("Passwords do not match")
     }
 
     try {
-      setError("")
       setLoading(true)
+      
       await signup(emailRef.current.value, passwordRef.current.value)
-      history.push("/")
+      // console.log(signup)
+      // console.log(emailRef)
+      // console.log(passwordRef)
+      setSuccess("succesfully created account!")
+
+      setTimeout(function () {
+        history("/cart")
+      }, 1000);
+
+      // console.log("succesfully created account")
+
     } catch {
       setError("Failed to create an account")
+      console.log("failed creating account")
     }
 
-    setLoading(false)
+    setLoading(true)
   }
 
   return (
@@ -37,6 +51,9 @@ function SignUp() {
         <h2>Create Your Account</h2>
         <div className="auth_error">
           {error && <p>{error}</p>}
+        </div>
+        <div className="auth_success">
+          {success && <p>{success}</p>}
         </div>
         <form className="auth__form" onSubmit={handleSubmit}>
           <input className="auth-input" placeholder="Your E-mail" type="email" ref={emailRef}/>
@@ -60,4 +77,4 @@ function SignUp() {
   );
 }
 
-export default SignUp
+// export default SignUp

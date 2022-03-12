@@ -5,7 +5,7 @@ import { useStateValue } from "../../StateProvider";
 import { getCartTotal } from '../../reducer';
 import CurrencyFormat from 'react-currency-format';
 import { auth } from "../../Firebase";
-import SignIn from '../../Pages/SignIn/SignIn';
+// import SignIn from '../../Pages/SignIn/SignIn';
 
 function Header() {
   const [{ cart, user }] = useStateValue();

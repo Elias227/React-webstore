@@ -15,7 +15,7 @@ export function AuthProvider({ children }) {
     return auth.createUserWithEmailAndPassword(email, password)
   }
 
-  function login(email, password) {
+  function signin(email, password) {
     return auth.signInWithEmailAndPassword(email, password)
   }
 
@@ -23,17 +23,17 @@ export function AuthProvider({ children }) {
     return auth.signOut()
   }
 
-  function resetPassword(email) {
-    return auth.sendPasswordResetEmail(email)
-  }
+  // function resetPassword(email) {
+  //   return auth.sendPasswordResetEmail(email)
+  // }
 
-  function updateEmail(email) {
-    return currentUser.updateEmail(email)
-  }
+  // function updateEmail(email) {
+  //   return currentUser.updateEmail(email)
+  // }
 
-  function updatePassword(password) {
-    return currentUser.updatePassword(password)
-  }
+  // function updatePassword(password) {
+  //   return currentUser.updatePassword(password)
+  // }
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
@@ -46,7 +46,7 @@ export function AuthProvider({ children }) {
 
   const value = {
     currentUser,
-    login,
+    signin,
     signup,
     logout
   }

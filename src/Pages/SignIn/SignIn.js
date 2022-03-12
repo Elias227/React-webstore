@@ -1,14 +1,14 @@
 import React, { useRef, useState } from "react"
 import { useAuth } from "../../AuthContext"
-import "./SignIn.css";
 import { Link, useNavigate } from 'react-router-dom';
+import "./SignIn.css";
 
-
-function SignIn() {
+export default function SignIn() {
   const emailRef = useRef()
   const passwordRef = useRef()
-  const { signup } = useAuth()
+  const { signin } = useAuth()
   const [error, setError] = useState("")
+  const [success, setSuccess] = useState("")
   const [loading, setLoading] = useState(false)
   const history = useNavigate()
 
@@ -16,12 +16,15 @@ function SignIn() {
     e.preventDefault()
 
     try {
-      setError("")
+      setSuccess("success!")
       setLoading(true)
-      await signup(emailRef.current.value, passwordRef.current.value)
-      history.push("/")
+      await signin(emailRef.current.value, passwordRef.current.value)
+      // console.log(emailRef)
+      setTimeout(function () {
+        history("/")
+      }, 100);
     } catch {
-      setError("Failed to create an account")
+      setError("Failed to sign in")
     }
 
     setLoading(false)
@@ -33,18 +36,21 @@ function SignIn() {
         <div className="auth_error">
           {error && <p>{error}</p>}
         </div>
+        <div className="auth_success">
+          {success && <p>{success}</p>}
+        </div>
         <form className="auth__form" onSubmit={handleSubmit}>
           {/* <label> */}
-            <input className="auth-input" placeholder="Your E-mail" type="email" ref={emailRef}/>
+          <input className="auth-input" placeholder="Your E-mail" type="email" ref={emailRef}/>
           {/* </label> */}
 
           <input className="auth-input" placeholder="Password" type="password" ref={passwordRef} />
 
           <button className="auth__button" disabled={loading} type="submit">
-            Sign Up
+            Sign In
           </button>
         </form>
-
+        
         <div className="auth-bottom">
           <p>New Customer? Create an Account</p>
           <Link className="auth__button" to="/sign-up">
@@ -57,4 +63,4 @@ function SignIn() {
   );
 }
 
-export default SignIn
+// export default SignIn
