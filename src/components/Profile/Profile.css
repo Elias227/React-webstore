@@ -2,8 +2,8 @@
 .profile {
   position: absolute;
   width: 260px;
-  top: 2.5em;
-  right: 4.75em;
+  margin-left: -114px;
+  margin-top: 8px;
 }
 
 /* --- container --- */
@@ -58,9 +58,10 @@
   background-color: rgb(223, 43, 43);
   color: #fff;
   border-radius: 8px;
+  border: none;
   font-weight: bold;
   font-size: 16px;
-  padding: 3px;
+  padding: 3px 20px;
   cursor: pointer;
 }
 

@@ -1,29 +1,43 @@
-import React from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import './Header.css';
 import { NavLink } from 'react-router-dom';
 import { useStateValue } from "../../StateProvider";
 import { getCartTotal } from '../../reducer';
 import CurrencyFormat from 'react-currency-format';
-// import { auth } from "../../Firebase";
 import SignIn from '../../Pages/SignIn/SignIn';
 import Profile from "../Profile/Profile";
-
 import { useAuth } from "../../AuthContext"
 
-// import PrivateRoute from "../../PrivateRoute"
+let useClickOutside = (handler) => {
+  let domNode = useRef();
+
+  useEffect(() => {
+    let maybeHandler = (event) => {
+      if (!domNode.current.contains(event.target)) {
+        handler();
+      }
+    };
+  
+    document.addEventListener("mousedown", maybeHandler);
+  
+    return () => {
+      document.removeEventListener("mousedown", maybeHandler);
+    };
+  });
+
+  return domNode
+}
 
 function Header() {
   const [{ cart }] = useStateValue();
-  const { currentUser } = useAuth()
+  const { currentUser } = useAuth();
+  const [open, setOpen] = useState(false);
 
 
-  // const SignIn = () => {
-    // if (user) {
-      // auth.signOut();
-    // }
-  // }
-
-  // console.log(cart);
+  // profile closingˇˇˇ
+  let domNode = useClickOutside(() => {
+    setOpen(false);
+  })
 
   return <header className="header">
     <div className="header__content">
@@ -90,14 +104,17 @@ function Header() {
       </div>
       {/* Right side stuff */}
       <div className="right__side">
-        <div className="sign__in-container">
-          <NavLink to={!currentUser && "/sign-in"}>
+        <div ref={domNode} className="sign__in-container">
+          <NavLink
+            to={!currentUser && "/sign-in"} 
+            onClick={() => {
+              setOpen(!open);
+            }}>
             <div onClick={SignIn}>
-              <h2>{currentUser ? <><img src="/images/user-icon.svg" alt="icon" /><Profile /></> : <div className="sign__in">Sign In</div> }</h2>
+              <h2>{currentUser ? <><img src="/images/user-icon.svg" alt="icon" />{open && <Profile /> }</> : <div className="sign__in">Sign In</div>}</h2>
             </div>
           </NavLink>
         </div>
-
       {/* --- cart ---- */}
 
         <div className="shopping__cart">
