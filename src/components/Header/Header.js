@@ -4,19 +4,26 @@ import { NavLink } from 'react-router-dom';
 import { useStateValue } from "../../StateProvider";
 import { getCartTotal } from '../../reducer';
 import CurrencyFormat from 'react-currency-format';
-import { auth } from "../../Firebase";
-// import SignIn from '../../Pages/SignIn/SignIn';
+// import { auth } from "../../Firebase";
+import SignIn from '../../Pages/SignIn/SignIn';
+import Profile from "../Profile/Profile";
+
+import { useAuth } from "../../AuthContext"
+
+// import PrivateRoute from "../../PrivateRoute"
 
 function Header() {
-  const [{ cart, user }] = useStateValue();
+  const [{ cart }] = useStateValue();
+  const { currentUser } = useAuth()
 
-  const SignIn = () => {
-    if (user) {
-      auth.signOut();
-    }
-  }
 
-  console.log(cart);
+  // const SignIn = () => {
+    // if (user) {
+      // auth.signOut();
+    // }
+  // }
+
+  // console.log(cart);
 
   return <header className="header">
     <div className="header__content">
@@ -83,14 +90,16 @@ function Header() {
       </div>
       {/* Right side stuff */}
       <div className="right__side">
-        <div className="sign__in">
-          <NavLink to={!user && "/sign-in"}>
+        <div className="sign__in-container">
+          <NavLink to={!currentUser && "/sign-in"}>
             <div onClick={SignIn}>
-              <h2>{user?.email}</h2>
-              <h2>{user ? 'Sign Out' : 'Sign In'}</h2>
+              <h2>{currentUser ? <><img src="/images/user-icon.svg" alt="icon" /><Profile /></> : <div className="sign__in">Sign In</div> }</h2>
             </div>
           </NavLink>
         </div>
+
+      {/* --- cart ---- */}
+
         <div className="shopping__cart">
           <NavLink to="cart">
             <img src="/images/icons8-shopping-cart-48.png" alt="cart"/>

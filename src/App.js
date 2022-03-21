@@ -11,7 +11,8 @@ import SignIn from './Pages/SignIn/SignIn';
 // import { useStateValue } from "./StateProvider";
 // import { auth } from './Firebase';
 import SignUp from './Pages/SignIn/Signup/SignUp';
-import { AuthProvider } from "./AuthContext"
+import { AuthProvider } from "./AuthContext";
+
 
 function App() {
   // const [{ user }, dispatch] = useStateValue();

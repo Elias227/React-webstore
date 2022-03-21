@@ -128,22 +128,28 @@
 }
 
 /* --- sign in --- */
-/* .sign__in a {
-    text-decoration: none;
-    color: #FF9900;
-    font-weight: 900;
-    transition: 0.2s;
-    outline: solid 4px #FF9900;
-    border-radius: 2px;
-    padding: 6px 23px;
-    margin-left: 10px;
+.sign__in-container a {
+  text-decoration: none;
+}
+.sign__in {
+  font-weight: 800;
+  transition: 0.2s;
+  outline: solid 4px #FF9900;
+  border-radius: 2px;
+  padding: 3px 20px;
+  margin-left: 10px;
+  color: #FF9900;
+  font-size: 19px;
 }
 
-.sign__in a:hover {
+.sign__in:hover {
     background-color: #FF9900;
     color: #000000;
-} */
-
+}
+.profile_card {
+  display: none;
+  margin-top: 5em;
+}
 /* --- shopping cart --- */
 .shopping__cart {
     margin-left: 30px;
