@@ -8,6 +8,9 @@ import SignIn from '../../Pages/SignIn/SignIn';
 import Profile from "../Profile/Profile";
 import { useAuth } from "../../AuthContext"
 
+import { useTransition, animated } from 'react-spring';
+
+// click outside handling ˇˇˇ
 let useClickOutside = (handler) => {
   let domNode = useRef();
 
@@ -33,8 +36,14 @@ function Header() {
   const { currentUser } = useAuth();
   const [open, setOpen] = useState(false);
 
+  // profile animations ˇˇˇ
+  const transition = useTransition(open, {
+    from: {opacity: 0},
+    enter: {opacity: 1},
+    leave: {opacity: 0},
+  });
 
-  // profile closingˇˇˇ
+  // profile closing with click outside ˇˇˇ
   let domNode = useClickOutside(() => {
     setOpen(false);
   })
@@ -111,7 +120,14 @@ function Header() {
               setOpen(!open);
             }}>
             <div onClick={SignIn}>
-              <h2>{currentUser ? <><img src="/images/user-icon.svg" alt="icon" />{open && <Profile /> }</> : <div className="sign__in">Sign In</div>}</h2>
+              <h2>
+                {currentUser ? 
+                  <>
+                    <img className="user_icon" src="/images/user-icon.svg" alt="icon" /> 
+                    {transition((style, item) => item ? <animated.div style={style}><Profile /></animated.div> : '' )}
+                  </>
+                 : <div className="sign__in">Sign In</div>}
+              </h2>
             </div>
           </NavLink>
         </div>

@@ -13,7 +13,7 @@ export default function Profile() {
 
     try {
       await logout()
-      history("/")
+      history("/sign-in")
     } catch {
       setError("Failed to log out")
     }

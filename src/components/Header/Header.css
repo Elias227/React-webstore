@@ -126,7 +126,9 @@
     align-items: center;
     white-space: nowrap;
 }
-
+.user_icon {
+  margin-top: 5px;
+}
 /* --- sign in --- */
 .sign__in-container a {
   text-decoration: none;
