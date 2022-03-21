@@ -12,6 +12,8 @@ import SignIn from './Pages/SignIn/SignIn';
 // import { auth } from './Firebase';
 import SignUp from './Pages/SignIn/Signup/SignUp';
 import { AuthProvider } from "./AuthContext";
+import ForgotPassword from './Pages/ForgotPassword/ForgotPassword';
+import UpdateProfile from './Pages/UpdateProfile/UpdateProfile';
 
 
 function App() {
@@ -55,6 +57,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/sign-in" element={<SignIn />}/>
           <Route path="/sign-up" element={<SignUp />}/>
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/update-profile" element={<UpdateProfile />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
           <Footer />

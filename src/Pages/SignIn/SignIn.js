@@ -16,10 +16,9 @@ export default function SignIn() {
     e.preventDefault()
 
     try {
-      setSuccess("success!")
       setLoading(true)
       await signin(emailRef.current.value, passwordRef.current.value)
-      // console.log(emailRef)
+      setSuccess("success!")
       setTimeout(function () {
         history("/")
       }, 100);
@@ -40,15 +39,16 @@ export default function SignIn() {
           {success && <p>{success}</p>}
         </div>
         <form className="auth__form" onSubmit={handleSubmit}>
-          {/* <label> */}
           <input className="auth-input" placeholder="Your E-mail" type="email" ref={emailRef}/>
-          {/* </label> */}
 
           <input className="auth-input" placeholder="Password" type="password" ref={passwordRef} />
 
           <button className="auth__button" disabled={loading} type="submit">
             Sign In
           </button>
+          <Link className="forgot__password" to="/forgot-password">
+            Forgot Password
+          </Link>
         </form>
         
         <div className="auth-bottom">

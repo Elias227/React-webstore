@@ -47,10 +47,11 @@
 }
 
 /* --- update profile button --- */
-.update {
+.update_profile {
   color: black;
   font-weight: bold;
   font-size: 16px;
+  text-decoration: underline !important;
 }
 
 /* --- logout button --- */
