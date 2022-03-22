@@ -32,7 +32,7 @@ export default function SignUp() {
       setSuccess("succesfully created account!")
 
       setTimeout(function () {
-        history("/cart")
+        history("/")
       }, 1000);
 
       // console.log("succesfully created account")
@@ -51,9 +51,7 @@ export default function SignUp() {
         <h2>Create Your Account</h2>
         <div className="auth_error">
           {error && <p>{error}</p>}
-        </div>
-        <div className="auth_success">
-          {success && <p>{success}</p>}
+          {success && <p className="auth_success">{success}</p>}
         </div>
         <form className="auth__form" onSubmit={handleSubmit}>
           <input className="auth-input" placeholder="Your E-mail" type="email" ref={emailRef}/>

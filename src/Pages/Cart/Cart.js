@@ -20,17 +20,18 @@ function Cart() {
               <h3 className="cart__your-shopping-cart">Your Shopping Cart ({cart.length})</h3>
 
               <div className="cart__products-text">
-                <div class="cart-products">
+                <div className="cart-products">
                   <h4>Products</h4>
                 </div>
-                <div class="cart-price">
+                <div className="cart-price">
                   <h4>Price</h4>
                 </div>
               </div>
 
               <hr className="cart__line" />
-              {cart?.map((item) => (
-                  <CheckoutProduct 
+              {cart?.map((item, index) => (
+                  <CheckoutProduct
+                    key={index}
                     id={item.id}
                     title={item.title}
                     image={item.image}

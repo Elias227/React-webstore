@@ -23,11 +23,11 @@ function Product({ id, title, image, price, rating }) {
       <h1>{title}</h1>
       <div className="product__price-and-rating">
         <p className="product__price">{price}€</p>
-        <div className="product__rating">
+        <div className="product__big-rating">
           {Array(rating)
-            .fill()
-            .map((_) => (
-              <p>⭐</p>
+          .fill()
+          .map((_, index) => (
+            <p key={index}>⭐</p>
           ))}
         </div>
       </div>

@@ -28,10 +28,10 @@ function Product_Big({ id, title, description, image, price, rating }) {
           <p className="product__big-price">{price}€</p>
           <div className="product__big-rating">
             {Array(rating)
-              .fill()
-              .map((_) => (
-                <p>⭐</p>
-              ))}
+            .fill()
+            .map((_, index) => (
+              <p key={index}>⭐</p>
+            ))}
           </div>
         </div>
         <p className="product__big-description">{description}</p>

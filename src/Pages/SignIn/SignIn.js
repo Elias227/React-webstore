@@ -17,6 +17,7 @@ export default function SignIn() {
 
     try {
       setLoading(true)
+      setError("")
       await signin(emailRef.current.value, passwordRef.current.value)
       setSuccess("success!")
       setTimeout(function () {
@@ -34,14 +35,12 @@ export default function SignIn() {
         <h2>Sign In</h2>
         <div className="auth_error">
           {error && <p>{error}</p>}
-        </div>
-        <div className="auth_success">
-          {success && <p>{success}</p>}
+          {success && <p className="auth_success">{success}</p>}
         </div>
         <form className="auth__form" onSubmit={handleSubmit}>
-          <input className="auth-input" placeholder="Your E-mail" type="email" ref={emailRef}/>
+          <input className="auth-input" placeholder="Your E-mail" type="email" ref={emailRef} required/>
 
-          <input className="auth-input" placeholder="Password" type="password" ref={passwordRef} />
+          <input className="auth-input" placeholder="Password" type="password" ref={passwordRef} required/>
 
           <button className="auth__button" disabled={loading} type="submit">
             Sign In
