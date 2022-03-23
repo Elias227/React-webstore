@@ -37,7 +37,7 @@ function Home() {
         id="134786"
         title="Product Title"
         price={10.00}
-        rating={5}
+        rating={4}
         image="/images/battery-bank.png"
       />
       <Product
@@ -51,7 +51,7 @@ function Home() {
         id="923456"
         title="Product Title"
         price={444}
-        rating={5}
+        rating={3}
         image="/images/Television.png"
       />
     </div>

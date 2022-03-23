@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 import { useStateValue } from "../../StateProvider";
 import { getCartTotal } from '../../reducer';
 import CurrencyFormat from 'react-currency-format';
-import SignIn from '../../Pages/SignIn/SignIn';
 import Profile from "../Profile/Profile";
 import { useAuth } from "../../AuthContext"
 
@@ -119,7 +118,7 @@ function Header() {
             onClick={() => {
               setOpen(!open);
             }}>
-            <div onClick={SignIn}>
+            <div>
               <h2>
                 {currentUser ? 
                   <>
@@ -132,7 +131,6 @@ function Header() {
           </NavLink>
         </div>
       {/* --- cart ---- */}
-
         <div className="shopping__cart">
           <NavLink to="cart">
             <img src="/images/icons8-shopping-cart-48.png" alt="cart"/>

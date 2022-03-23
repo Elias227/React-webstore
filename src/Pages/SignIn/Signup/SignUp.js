@@ -39,7 +39,7 @@ export default function SignUp() {
 
     } catch {
       setError("Failed to create an account")
-      console.log("failed creating account")
+      // console.log("failed creating account")
     }
 
     setLoading(true)
@@ -54,11 +54,11 @@ export default function SignUp() {
           {success && <p className="auth_success">{success}</p>}
         </div>
         <form className="auth__form" onSubmit={handleSubmit}>
-          <input className="auth-input" placeholder="Your E-mail" type="email" ref={emailRef}/>
+          <input className="auth-input" placeholder="Your E-mail" type="email" ref={emailRef} required/>
 
-          <input className="auth-input" placeholder="Password" type="password" ref={passwordRef} />
+          <input className="auth-input" placeholder="Password" type="password" ref={passwordRef} required/>
 
-          <input className="auth-input" placeholder="Confirm Password" type="password" ref={passwordConfirmRef} />
+          <input className="auth-input" placeholder="Confirm Password" type="password" ref={passwordConfirmRef} required/>
 
           <button className="auth__button" disabled={loading} type="submit">
             Create Your Account

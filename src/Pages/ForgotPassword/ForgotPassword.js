@@ -29,7 +29,7 @@ export default function ForgotPassword() {
   return (
       <div className="auth__parent">
         <div className="auth__container">
-          <h2 className="">Password Reset</h2>
+          <h2 className="">Reset Password</h2>
           <div className="auth_error">
             {error && <div>{error}</div>}
             {message && <div className="auth_success">{message}</div>}
@@ -42,9 +42,6 @@ export default function ForgotPassword() {
           </form>
           <div className="">
             <Link to="/sign-in">Sign In</Link>
-          </div>
-          <div className="">
-            Need an account? <Link to="/sign-up">create account</Link>
           </div>
         </div>
       </div>
