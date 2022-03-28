@@ -16,30 +16,22 @@ export default function SignUp() {
   async function handleSubmit(e) {
     e.preventDefault()
 
-    console.log("test1")
-
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       return setError("Passwords do not match")
     }
 
     try {
       setLoading(true)
-      
       await signup(emailRef.current.value, passwordRef.current.value)
-      // console.log(signup)
-      // console.log(emailRef)
-      // console.log(passwordRef)
       setSuccess("succesfully created account!")
-
       setTimeout(function () {
         history("/")
       }, 1000);
-
-      // console.log("succesfully created account")
-
-    } catch {
+    } catch(error) { 
+      if (error.code === 'EMAIL_EXISTS') {
+        console.log("user already exists")
+      }
       setError("Failed to create an account")
-      // console.log("failed creating account")
     }
 
     setLoading(true)
@@ -49,9 +41,9 @@ export default function SignUp() {
     <div className="auth__parent">
       <div className="auth__container">
         <h2>Create Your Account</h2>
-        <div className="auth_error">
+        <div className="auth-error">
           {error && <p>{error}</p>}
-          {success && <p className="auth_success">{success}</p>}
+          {success && <p className="auth-success">{success}</p>}
         </div>
         <form className="auth__form" onSubmit={handleSubmit}>
           <input className="auth-input" placeholder="Your E-mail" type="email" ref={emailRef} required/>
@@ -60,19 +52,21 @@ export default function SignUp() {
 
           <input className="auth-input" placeholder="Confirm Password" type="password" ref={passwordConfirmRef} required/>
 
-          <button className="auth__button" disabled={loading} type="submit">
+          <button className="auth__button button__more-space" disabled={loading} type="submit">
             Create Your Account
           </button>
         </form>
 
-        <div className="auth-bottom">
+        {/* <div className="auth-bottom">
           <p>Already Have An account?</p>
           <Link to="/sign-in">Log In</Link>
+        </div> */}
+
+        <div className="auth__button-secondary">
+          <Link to="/sign-in">Sign In</Link>
         </div>
 
       </div>
     </div>
   );
 }
-
-// export default SignUp

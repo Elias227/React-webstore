@@ -33,20 +33,21 @@ export default function SignIn() {
     <div className="auth__parent">
       <div className="auth__container">
         <h2>Sign In</h2>
-        <div className="auth_error">
+        <div className="auth-error">
           {error && <p>{error}</p>}
-          {success && <p className="auth_success">{success}</p>}
+          {success && <p className="auth-success">{success}</p>}
         </div>
         <form className="auth__form" onSubmit={handleSubmit}>
           <input className="auth-input" placeholder="Your E-mail" type="email" ref={emailRef} required/>
 
           <input className="auth-input" placeholder="Password" type="password" ref={passwordRef} required/>
-
+          
           <button className="auth__button" disabled={loading} type="submit">
             Sign In
           </button>
+
           <Link className="forgot__password" to="/forgot-password">
-            Forgot Password
+            Forgot Password?
           </Link>
         </form>
         

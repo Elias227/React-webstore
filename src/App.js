@@ -14,7 +14,7 @@ import ForgotPassword from './Pages/ForgotPassword/ForgotPassword';
 import UpdateProfile from './Pages/UpdateProfile/UpdateProfile';
 import PrivateRoute from './PrivateRoute';
 
-// ˇˇˇhandles private routing for sign in...ˇˇˇ
+// ˇˇˇhandles private routing for auth pagesˇˇˇ
 function ProtectedRoute() {
   const { currentUser } = useAuth();
   return currentUser ? <Navigate to="/" /> : <Outlet />;
@@ -30,15 +30,13 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />}/>
           <Route path="/about" element={<About />} />
-          {/* ˇˇˇprivate route for auth pages not showed when user signed in.
-          Logic handled in app.jsˇˇˇ */}
+          {/* ˇˇˇauth pages not showed when user signed in. Logic handled in app.jsˇˇˇ */}
           <Route element={<ProtectedRoute />}>
             <Route path="/sign-in" element={<SignIn />}/>
             <Route path="/sign-up" element={<SignUp />}/>
             <Route path="/forgot-password" element={<ForgotPassword />} />
           </Route>
-          {/* ˇˇˇprivate route when user is logged out.
-          Logic handled outside app.jsˇˇˇ */}
+          {/* ˇˇˇprivate route when user is logged out. Logic handled outside app.jsˇˇˇ */}
           <Route element={<PrivateRoute />}>
             <Route path="/update-profile" element={<UpdateProfile />} />
           </Route>
@@ -46,7 +44,6 @@ function App() {
         </Routes>
           <Footer />
       </Router>
-
     </AuthProvider>
   );
 }

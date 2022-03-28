@@ -30,20 +30,24 @@ export default function ForgotPassword() {
       <div className="auth__parent">
         <div className="auth__container">
           <h2 className="">Reset Password</h2>
-          <div className="auth_error">
+          <div className="auth-error">
             {error && <div>{error}</div>}
-            {message && <div className="auth_success">{message}</div>}
+            {message && <div className="auth-success">{message}</div>}
           </div>
           <form className="auth__form" onSubmit={handleSubmit}>
-            <input className="auth-input" type="email" placeholder="email" ref={emailRef} />
+            <input className="auth-input" type="email" placeholder="Your email" ref={emailRef} />
             <button className="auth__button" disabled={loading} type="submit">
               Reset Password
             </button>
           </form>
-          <div className="">
+          <div className="auth__button-secondary">
             <Link to="/sign-in">Sign In</Link>
+          </div>
+          <div className="auth__link">
+            <p>New customer? <Link to="/sign-up">Create An Account</Link></p>
           </div>
         </div>
       </div>
   )
 }
+
