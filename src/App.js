@@ -14,6 +14,7 @@ import ForgotPassword from './Pages/ForgotPassword/ForgotPassword';
 import UpdateProfile from './Pages/UpdateProfile/UpdateProfile';
 import PrivateRoute from './PrivateRoute';
 
+
 // ˇˇˇhandles private routing for auth pagesˇˇˇ
 function ProtectedRoute() {
   const { currentUser } = useAuth();
@@ -26,6 +27,8 @@ function App() {
     <AuthProvider>
       <Router>
           <Header />
+      <div className="page-container">
+      <div className="content-wrap">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />}/>
@@ -42,7 +45,9 @@ function App() {
           </Route>
           <Route path="*" element={<ErrorPage />} />
         </Routes>
-          <Footer />
+      </div>
+      </div>
+        <Footer />
       </Router>
     </AuthProvider>
   );

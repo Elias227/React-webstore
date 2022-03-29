@@ -2,7 +2,8 @@
 .footer {
   background-color: #282828;
   width: 100%;
-  margin-top: 10em;
+  /* margin-top: 10em; */
+  margin-top: 40px;
 }
 
 /* --- content all --- */
